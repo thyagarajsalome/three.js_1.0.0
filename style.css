@@ -1,0 +1,126 @@
+:root {
+  --primary-color: #fff;
+  --bg-color: #121212;
+  --text-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  font-family: "Bebas Neue";
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: normal;
+}
+nav a ::hover {
+  color: dodgerblue;
+  animation: 01s;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.title {
+  position: absolute;
+  font-size: 3rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(18, 18, 18, 0.95);
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 1rem 3%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
